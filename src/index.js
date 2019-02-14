@@ -2,10 +2,11 @@ import yargs from "yargs"
 import guessPackageManager from "guess-package-manager"
 
 const job = async args => {
-  const packageManagers = []
+  const packageManagers = {}
   const packageManagersRequire = require.context("./packageManagers", false, /\.js$/)
   for (const module of packageManagersRequire.keys()) {
-    packageManagers.push(packageManagersRequire(module).default)
+    const packageManager = packageManagersRequire(module).default
+    packageManagers[packageManager.id] = packageManager
   }
 
   const cli = yargs
@@ -24,12 +25,11 @@ const job = async args => {
     cli.command(commandsRequire(module).default)
   }
 
-  cli
+  const {argv} = cli
     .recommendCommands()
     .demandCommand()
     .scriptName("pover")
     .help()
-    .parse(args)
 }
 
 job(process.argv)

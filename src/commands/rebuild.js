@@ -1,5 +1,13 @@
-const handler = () => {
-  console.log(2)
+import path from "path"
+
+import exec from "lib/exec"
+import getCommand from "lib/getCommand"
+import fsp from "@absolunet/fsp"
+
+const handler = async argv => {
+  const command = getCommand(argv)
+  await Promise.all([fsp.emptyDir(path.resolve("node_modules"))])
+  exec(command.binary, command.args)
 }
 
 export default {

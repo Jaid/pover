@@ -38,6 +38,7 @@
     "eslint": "^5.13.0",
     "eslint-config-jaid": "^1.11.1",
     "jest": "^24.1.0",
+    "lodash": "^4.17.11",
     "opn-cli": "^4.0.0",
     "rimraf": "^2.6.3",
     "webpack": "^4.29.3",

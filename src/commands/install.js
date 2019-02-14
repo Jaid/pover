@@ -1,10 +1,9 @@
 import exec from "lib/exec"
+import getCommand from "lib/getCommand"
 
 const handler = async argv => {
-  console.log(argv)
-  const commands = argv.packageManagers[argv.packageManager].commands
-  const command = commands.install()
-  exec(...command)
+  const command = getCommand(argv)
+  exec(command.binary, command.args)
 }
 
 export default {
