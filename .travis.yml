@@ -15,11 +15,6 @@ jobs:
         - zip -9 --recurse-paths ../../${PKG_NAME}_v${PKG_VERSION}_min.zip ** --exclude \*.d.ts --exclude readme.* --exclude \*.map
         - cd ../../..
       deploy:
-        - provider: pages
-          local_dir: dist/homepage/$PKG_NAME/$PKG_VERSION
-          fqdn: $PKG_NAME.jaid.codes
-          skip_cleanup: true
-          github_token: $GITHUB_TOKEN # Permissions: public_repo, repo:status, repo_deployment
         - provider: releases
           file_glob: true
           file:
