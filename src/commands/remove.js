@@ -2,7 +2,7 @@ import exec from "lib/exec"
 import getCommand from "lib/getCommand"
 
 const handler = async argv => {
-  const command = getCommand(argv)
+  const command = getCommand(argv, "remove")
   exec(command.binary, [...command.args, ...argv.packages])
 }
 

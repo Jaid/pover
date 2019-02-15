@@ -1,5 +1,5 @@
 const handler = argv => {
-  console.log(argv)
+  console.log(argv, "debug")
 }
 
 export default {
