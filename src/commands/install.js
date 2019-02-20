@@ -3,7 +3,7 @@ import getCommand from "lib/getCommand"
 
 const handler = async argv => {
   const command = getCommand(argv, "install")
-  exec(command.binary, command.args)
+  await exec(command.binary, command.args)
 }
 
 export default {

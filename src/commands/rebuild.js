@@ -7,7 +7,7 @@ import fsp from "@absolunet/fsp"
 const handler = async argv => {
   const command = getCommand(argv, "rebuild")
   await Promise.all([fsp.emptyDir(path.resolve("node_modules"))])
-  exec(command.binary, command.args)
+  await exec(command.binary, command.args)
 }
 
 export default {

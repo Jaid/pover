@@ -3,7 +3,7 @@ import getCommand from "lib/getCommand"
 
 const handler = async argv => {
   const command = getCommand(argv, "removeGlobal")
-  exec(command.binary, [...command.args, ...argv.packages])
+  await exec(command.binary, [...command.args, ...argv.packages])
 }
 
 export default {
