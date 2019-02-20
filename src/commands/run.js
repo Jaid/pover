@@ -9,6 +9,6 @@ const handler = async argv => {
 export default {
   handler,
   command: "run <scriptName>",
-  aliases: ["r", "*"],
+  aliases: ["*"],
   describe: "Run commands from package.json#scripts",
 }
