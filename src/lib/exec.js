@@ -53,12 +53,26 @@ export default async (file, args) => {
       options.ora.render()
     }, 1000 / options.oraFps)
   }
-  await execa(file, commandArgs, {
-    cwd: options.cwd,
-    timeout: options.timeout,
-  })
+  try {
+    await execa(file, commandArgs, {
+      cwd: options.cwd,
+      timeout: options.timeout,
+    })
+  } catch (error) {
+    if (options.ora) {
+      if (error?.code) {
+        options.ora.fail(`${options.ora.text} ${chalk.red(`= ${error.code}`)}`)
+        console.error(chalk.red(error.message))
+      }
+    }
+    return false
+  } finally {
+    if (options.ora) {
+      clearInterval(interval)
+    }
+  }
   if (options.ora) {
-    clearInterval(interval)
     options.ora.succeed()
   }
+  return true
 }
