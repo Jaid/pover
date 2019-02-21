@@ -49,9 +49,8 @@
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "webpack",
     "test": "npm run build:prod && cross-env NODE_ENV=production MAIN=dist/package/production/cli.js jest --runInBand",
-    "test:coverage": "npm run test:dev -- --coverage --json --outputFile=dist/jest/stats.json",
-    "test:dev": "cross-env NODE_ENV=test jest --runInBand",
-    "test:debug": "cross-env DEBUG=\"$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
+    "test:dev": "npm run build:dev && cross-env NODE_ENV=test MAIN=dist/package/development/cli.js jest --runInBand",
+    "test:debug": "npm run build:dev && cross-env DEBUG=\"$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test MAIN=dist/package/development/cli.js node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
     "release": "npm run clean && npm test && cross-env git tag v$npm_package_version && git push --tags && cross-env opn https://github.com/$npm_package_author_name/$(basename $PWD)/releases/new?tag=v$npm_package_version"
   }
 }
