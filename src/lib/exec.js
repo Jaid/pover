@@ -4,6 +4,7 @@ import chalk from "chalk"
 import figures from "figures"
 import execa from "execa"
 import ora from "ora"
+import byline from "byline"
 
 const createAnsiString = (file, commandArgs) => {
   let line = chalk.bgGreenBright.black(`${figures.pointer} `)
@@ -54,10 +55,43 @@ export default async (file, args) => {
     }, 1000 / options.oraFps)
   }
   try {
-    await execa(file, commandArgs, {
+    const execution = execa(file, commandArgs, {
       cwd: options.cwd,
       timeout: options.timeout,
     })
+
+    /*
+    streamEach(execution.stdout, (data, next) => {
+      console.log(String(data))
+      next()
+    }, () => {})
+    streamEach(execution.stderr, (data, next) => {
+      console.log(`E: ${String(data)}`)
+      next()
+    }, () => {})
+    */
+
+    if (options.ora) {
+      const pipes = [
+        {
+          field: "stdout",
+          event: text => options.ora.info(text),
+        },
+        {
+          field: "stderr",
+          event: text => options.ora.warn(text),
+        },
+      ]
+
+      for (const {field, event} of pipes) {
+        const emitter = byline(execution[field])
+        emitter.on("data", line => {
+          event(String(line))
+        })
+      }
+    }
+
+    await execution
   } catch (error) {
     if (options.ora) {
       if (error?.code) {

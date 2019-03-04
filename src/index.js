@@ -28,7 +28,8 @@ const job = async args => {
   const {argv} = cli
     .recommendCommands()
     .demandCommand()
-    .scriptName("pover")
+    .scriptName(_PKG_NAME)
+    .version(_PKG_VERSION)
     .help()
 }
 
