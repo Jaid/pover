@@ -76,17 +76,27 @@ export default async (file, args) => {
         {
           field: "stdout",
           event: text => options.ora.info(text),
+          filter: () => true,
         },
         {
           field: "stderr",
           event: text => options.ora.warn(text),
+          filter: text => {
+            if (text.includes("SKIPPING OPTIONAL DEPENDENCY:")) {
+              return false
+            }
+            return true
+          },
         },
       ]
 
-      for (const {field, event} of pipes) {
+      for (const {field, event, filter} of pipes) {
         const emitter = byline(execution[field])
         emitter.on("data", line => {
-          event(String(line))
+          const textLine = String(line)
+          if (filter(textLine)) {
+            event(textLine)
+          }
         })
       }
     }
