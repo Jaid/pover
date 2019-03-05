@@ -5,6 +5,7 @@ import figures from "figures"
 import execa from "execa"
 import ora from "ora"
 import byline from "byline"
+import stripAnsi from "strip-ansi"
 
 const createAnsiString = (file, commandArgs) => {
   let line = chalk.bgGreenBright.black(`${figures.pointer} `)
@@ -76,7 +77,12 @@ export default async (file, args) => {
         {
           field: "stdout",
           event: text => options.ora.info(text),
-          filter: () => true,
+          filter: text => {
+            if (text.includes("0 vulnerabilities")) {
+              return false
+            }
+            return true
+          },
         },
         {
           field: "stderr",
@@ -93,8 +99,8 @@ export default async (file, args) => {
       for (const {field, event, filter} of pipes) {
         const emitter = byline(execution[field])
         emitter.on("data", line => {
-          const textLine = String(line)
-          if (filter(textLine)) {
+          const textLine = String(line) |> stripAnsi |> #.trim()
+          if (textLine.length > 0 && filter(textLine)) {
             event(textLine)
           }
         })
