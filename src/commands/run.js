@@ -9,12 +9,12 @@ const handler = async argv => {
   if (pkg?.scripts?.[argv.scriptName]) {
     console.log(chalk.green(`  ↱ ${pkg.scripts[argv.scriptName]}`))
   }
-  await exec(command.binary, [...command.args, argv.scriptName])
+  await exec(command.binary, [...command.args, argv.scriptName, ...argv.scriptArguments])
 }
 
 export default {
   handler,
-  command: "run <scriptName>",
+  command: "run <scriptName> [scriptArguments...]",
   aliases: ["*"],
   describe: "Run commands from package.json#scripts",
 }
