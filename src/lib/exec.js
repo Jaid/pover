@@ -61,17 +61,6 @@ export default async (file, args) => {
       timeout: options.timeout,
     })
 
-    /*
-    streamEach(execution.stdout, (data, next) => {
-      console.log(String(data))
-      next()
-    }, () => {})
-    streamEach(execution.stderr, (data, next) => {
-      console.log(`E: ${String(data)}`)
-      next()
-    }, () => {})
-    */
-
     if (options.ora) {
       const pipes = [
         {
