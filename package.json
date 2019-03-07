@@ -20,7 +20,7 @@
     "babel-preset-jaid": "^5.2.1",
     "caniuse-lite": "^1.0.30000940",
     "coffee": "^5.2.1",
-    "eslint": "^5.15.0",
+    "eslint": "^5.15.1",
     "eslint-config-jaid": "^1.12.0",
     "jest": "^24.1.0",
     "lodash": "^4.17.11",
