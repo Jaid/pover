@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "babel-jest": "^24.1.0",
-    "babel-preset-jaid": "^5.2.1",
+    "babel-preset-jaid": "^5.5.0",
     "caniuse-lite": "^1.0.30000940",
     "coffee": "^5.2.1",
     "eslint": "^5.15.0",
