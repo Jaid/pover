@@ -11,7 +11,8 @@ const createAnsiString = (file, commandArgs) => {
   let line = chalk.bgGreenBright.black(`${figures.pointer} `)
   line += " "
   if (file.includes(path.sep)) {
-    line += chalk.gray(`${path.dirname(file)}/`)
+    line += chalk.gray(`${path.dirname(file)}`)
+    line += path.sep
     line += chalk.bold(path.basename(file))
   } else {
     line += chalk.bold(file)
