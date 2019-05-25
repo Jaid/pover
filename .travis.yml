@@ -9,10 +9,11 @@ jobs:
       node_js: node
       script:
         - curl https://gist.githubusercontent.com/Jaid/284917bd3e938add97b699a18b957d8c/raw/ciNodeRelease.bash | bash
+        - pkgName=$(npx package-name-cli)
       deploy:
         - provider: pages
           local_dir: dist/page
-          fqdn: $PKG_NAME.jaid.codes
+          fqdn: $pkgName.jaid.codes
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           on:
