@@ -10,6 +10,7 @@ package-lock.json
 npm-debug.log
 npm-debug.log.*
 .npmrc
+/report.*.json
 
 # pnpm
 shrinkwrap.yaml
