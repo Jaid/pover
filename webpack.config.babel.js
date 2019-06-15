@@ -1,5 +1,5 @@
-import {configureCli} from "webpack-config-jaid"
+import configure from "webpack-config-jaid"
 
-export default configureCli({
+export default configure({
   publishimo: {fetchGithub: true},
 })
