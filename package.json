@@ -22,6 +22,7 @@
     "acorn": "^6.2.0",
     "babel-jest": "^24.8.0",
     "babel-preset-jaid": "^6.8.1",
+    "browserslist-config-jaid-node": "^2.2.1",
     "caniuse-lite": "^1.0.30000981",
     "coffee": "^5.2.1",
     "eslint": "^6.0.1",
