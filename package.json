@@ -1,7 +1,7 @@
 {
   "title": "Pover",
   "webpackConfigJaid": "cli",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@babel/runtime": "^7.7.4",
