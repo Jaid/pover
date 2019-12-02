@@ -45,5 +45,6 @@
     "test:debug": "DEBUG=\"$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
     "prepareActionJest": "npm run build:prod"
   },
-  "name": "pover"
+  "name": "pover",
+  "description": "Package Overmanager. Easy CLI shortcuts for npm, pnpm, Yarn and Lerna."
 }
