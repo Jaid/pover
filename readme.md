@@ -1,9 +1,9 @@
 # Pover
 
 
-<a href="https://raw.githubusercontent.com/Jaid/pover/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/pover?style=flat-square" alt="License"/></a>  
-<a href="https://actions-badge.atrox.dev/Jaid/pover/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fpover%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/pover/commits"><img src="https://img.shields.io/github/commits-since/Jaid/pover/v1.3.3?style=flat-square&logo=github" alt="Commits since v1.3.3"/></a> <a href="https://github.com/Jaid/pover/commits"><img src="https://img.shields.io/github/last-commit/Jaid/pover?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/pover/issues"><img src="https://img.shields.io/github/issues/Jaid/pover?style=flat-square&logo=github" alt="Issues"/></a>  
-<a href="https://npmjs.com/package/pover"><img src="https://img.shields.io/npm/v/pover?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/pover/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/pover?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/pover"><img src="https://img.shields.io/npm/dm/pover?style=flat-square&logo=npm" alt="Downloads"/></a>
+<a href="https://raw.githubusercontent.com/jaid/pover/master/license.txt"><img src="https://img.shields.io/github/license/jaid/pover?style=flat-square" alt="License"/></a> <a href="https://github.com/sponsors/jaid"><img src="https://img.shields.io/badge/<3-Sponsor-FF45F1?style=flat-square" alt="Sponsor pover"/></a>
+<a href="https://actions-badge.atrox.dev/jaid/pover/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fpover%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/pover/commits"><img src="https://img.shields.io/github/commits-since/jaid/pover/v1.3.3?style=flat-square&logo=github" alt="Commits since v1.3.3"/></a> <a href="https://github.com/jaid/pover/commits"><img src="https://img.shields.io/github/last-commit/jaid/pover?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/pover/issues"><img src="https://img.shields.io/github/issues/jaid/pover?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/pover"><img src="https://img.shields.io/npm/v/pover?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/pover/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/pover?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/pover"><img src="https://img.shields.io/npm/dm/pover?style=flat-square&logo=npm" alt="Downloads"/></a>
 
 **Package Overmanager. Easy CLI shortcuts for npm, pnpm, Yarn and Lerna.**
 
@@ -33,7 +33,6 @@ yarn global add pover@^1.3.3
 
 
 
-
 ## CLI Usage
 After installing package `pover` globally, you can use its command line interface.
 ```bash
@@ -53,7 +52,7 @@ pover --help
 
 Setting up:
 ```bash
-git clone git@github.com:Jaid/pover.git
+git clone git@github.com:jaid/pover.git
 cd pover
 npm install
 ```
