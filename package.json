@@ -46,5 +46,6 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "pover",
-  "description": "Package Overmanager. Easy CLI shortcuts for npm, pnpm, Yarn and Lerna."
+  "description": "Package Overmanager. Easy CLI shortcuts for npm, pnpm, Yarn and Lerna.",
+  "funding": "https://github.com/sponsors/jaid"
 }
