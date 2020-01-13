@@ -47,5 +47,9 @@
   },
   "name": "pover",
   "description": "Package Overmanager. Easy CLI shortcuts for npm, pnpm, Yarn and Lerna.",
-  "funding": "https://github.com/sponsors/jaid"
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/pover"
+  }
 }
