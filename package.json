@@ -51,5 +51,23 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jaid/pover"
-  }
+  },
+  "homepage": "https://github.com/Jaid/pover",
+  "keywords": [
+    "cli",
+    "command",
+    "command-line",
+    "dependencies",
+    "global",
+    "install",
+    "lerna",
+    "lockfile",
+    "npm",
+    "package",
+    "package-json",
+    "pnpm",
+    "update",
+    "upgrade",
+    "yarn"
+  ]
 }
