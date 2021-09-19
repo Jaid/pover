@@ -68,5 +68,6 @@
     "update",
     "upgrade",
     "yarn"
-  ]
+  ],
+  "type": "module"
 }
